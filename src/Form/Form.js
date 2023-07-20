@@ -1,6 +1,6 @@
 import './Form.css';
 
-function Form() {
+const Form = () => {
 
 }
 

@@ -1,6 +1,6 @@
 import './Favorites.css';
 
-function Favorites() {
+const Favorites = () => {
 
 }
 

@@ -1,6 +1,6 @@
 import './Selector.css';
 
-function Selector() {
+const Selector = () => {
 
 }
 

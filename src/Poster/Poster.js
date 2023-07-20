@@ -1,6 +1,6 @@
 import './Poster.css';
 
-function Poster() {
+const Poster = () => {
 
 }
 
