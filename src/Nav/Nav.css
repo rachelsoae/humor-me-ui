@@ -3,7 +3,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-family: 'Inter', sans-serif;
+  /* background: white */
 }
+
+/* .nav-buttons{
+  background: white;
+} */
 
 .nav-button {
   background: #1D0F64;
@@ -24,4 +29,5 @@ nav {
   margin-left: 0.5em;
   color: #1D0F64;
   font-size: 2em;
+  /* background: white; */
 }
