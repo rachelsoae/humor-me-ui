@@ -2,3 +2,9 @@
   background: #FFE5AA;
   border: #FFE5AA solid 2px;
 }
+
+form{
+  background: #1D0F64;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
