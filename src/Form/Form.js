@@ -2,7 +2,9 @@ import './Form.css';
 
 const Form = () => {
   return (
-    <p>Form here</p>
+    <div id='form-page'>
+      <p>Form here</p>
+    </div>
   )
 }
 

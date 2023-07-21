@@ -12,3 +12,8 @@ nav {
   border-radius: 1.6em;
   height: 1.5em
 }
+
+.nav-button.active{
+  background: #FFE5AA;
+  color: #1D0F64;
+}
