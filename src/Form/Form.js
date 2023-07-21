@@ -18,7 +18,7 @@ const Form = () => {
     <div id='form-page' >
       <h2>make your own quote!</h2>
       <form onSubmit={handleSubmit}>
-        <label for='typeOfPoster'>1. select your quote type</label>
+        <label htmlFor='typeOfPoster'>1. select your quote type</label>
       </form>
     </div>
   )
