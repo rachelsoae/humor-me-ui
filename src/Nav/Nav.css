@@ -2,6 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Inter', sans-serif;
 }
 
 .nav-button {
@@ -10,10 +11,17 @@ nav {
   color: white;
   padding: .5em;
   border-radius: 1.6em;
-  height: 1.5em
+  height: 1.5em;
+  text-decoration: none;
 }
 
 .nav-button.active{
   background: #FFE5AA;
   color: #1D0F64;
+}
+
+#nav-title{
+  margin-left: 0.5em;
+  color: #1D0F64;
+  font-size: 2em;
 }
