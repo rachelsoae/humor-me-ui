@@ -5,9 +5,14 @@ const Home = () => {
   return (
     <div className='home-page'>
       <article className='selector' id='wholesome-block'>
-        <h3>wholesome quote generator</h3>
+        <h3 className='type-title'>wholesome quote generator</h3>
         <p className='selector-icon'>🥹</p>
-        <NavLink to='/'>click here!</NavLink>
+        <NavLink to='/wholesome-:posterid+quoteid' className='generate-link' id='generate-wholesome'>click here!</NavLink>
+      </article>
+      <article className='selector' id='chaotic-block'>
+        <h3 className='type-title'>chaotic quote generator</h3>
+        <p className='selector-icon'>😈</p>
+        <NavLink to='/chaotic-:posterid+quoteid' className='generate-link' id='generate-chaotic'>click here!</NavLink>
       </article>
     </div>
   )
