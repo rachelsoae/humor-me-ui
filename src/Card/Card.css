@@ -35,6 +35,7 @@
 }
 
 #emojis{
+  padding-top: 0.6em;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -42,9 +43,7 @@
 
 .card-button{
   border: none;
-  background: #FFE5AA;
-  border-radius: 1em;
+  background: none;
   font-size: 1.3em;
-  padding: 0.4em;
   cursor: pointer;
 }
