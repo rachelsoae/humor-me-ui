@@ -1,8 +1,11 @@
 import './Favorites.css';
+import Card from '../Card/Card.js'
 
 const Favorites = () => {
   return (
-    <p>Favs here</p>
+    <div id='fav-page'>
+      <Card />
+    </div>
   )
 }
 

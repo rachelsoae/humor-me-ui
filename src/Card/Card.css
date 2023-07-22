@@ -1,0 +1,45 @@
+#frame{
+  background: white;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: solid 2px red; */
+  padding: 1em;
+  border-radius: 0.4em;
+  width: 40%;
+}
+
+#img-and-quote{
+  /* border: solid 2px purple; */
+  position: relative;
+}
+
+#quote-img{
+  width: 100%;
+  border-radius: 0.3em;
+  /* position: absolute; */
+}
+
+#quote{
+  position: absolute;
+  /* border: yellow solid 2px; */
+  top: 30%;
+  left: 20%;
+  transform: translate(-13%, -34%);
+  color: white;
+  text-align: center;
+  text-shadow: 0.1em 0.1em 0.1em #1D0F64;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.2em;
+}
+
+#emojis{
+  display: flex;
+  border: solid 2px blue;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 1.5em;
+  /* padding: 0; */
+  /* align-items: flex-end; */
+}

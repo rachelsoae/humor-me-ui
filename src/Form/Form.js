@@ -27,7 +27,7 @@ const Form = () => {
         <label htmlFor='img-url'>2. add you image url</label>
         <input className='text-input' type='text' placeholder='image link goes here'></input>
         <label htmlFor='img-url'>3. create your quote</label>
-        <input className='text-input' type='text' placeholder='quote goes here'></input>
+        <input className='text-input'm  type='text' placeholder='quote goes here'></input>
         <div className='buttons'>
           <button className='form-button'>✏️ create</button>
         </div>
