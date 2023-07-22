@@ -5,6 +5,14 @@ const Favorites = () => {
   return (
     <div id='fav-page'>
       <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   )
 }
