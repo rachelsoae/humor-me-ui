@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, NavLink } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Favorites from '../Favorites/Favorites.js'
 import Form from '../Form/Form.js'
 import Home from '../Home/Home.js'
