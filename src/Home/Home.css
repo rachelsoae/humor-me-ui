@@ -1,0 +1,56 @@
+.home-page{
+  background: #FFE5AA;
+  height: 100em;
+  display: flex;
+  justify-content: center;
+}
+
+.selector{
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  width: 25%;
+  border-radius: 10em;
+  height: 25em
+}
+
+#wholesome-block{
+  background: #DEFDFF
+}
+
+#chaotic-block{
+  background: #FF5353
+}
+
+.generate-link{
+  padding: 0.6em;
+  font-size: 1.4em;
+  border-radius: 1em;
+  color: white;
+  text-decoration: none;
+}
+
+#generate-wholesome{
+  background: #5CBDC3
+}
+
+#generate-chaotic{
+  background: #F59854;
+}
+
+.selector-icon{
+  font-size: 2em;
+  margin-top: 0
+}
+
+.type-title{
+  font-size: 2.4em;
+  text-align: center;
+  color: #1D0F64;
+  padding: 0.6em;
+  margin-bottom: 0;
+}

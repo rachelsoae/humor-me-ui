@@ -1,1 +1,4 @@
-
+.form-button,
+.button-link{
+  cursor: pointer;
+}
