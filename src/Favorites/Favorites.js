@@ -6,7 +6,7 @@ const Favorites = () => {
   //eventually we will bring the favorites in from the app, map through them, and then display them on the dom using the Cards component
   
   return (
-    <div id='fav-page'>
+    <main id='fav-page'>
       <Card />
       <Card />
       <Card />
@@ -16,7 +16,7 @@ const Favorites = () => {
       <Card />
       <Card />
       <Card />
-    </div>
+    </main>
   )
 }
 

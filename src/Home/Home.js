@@ -5,7 +5,7 @@ const Home = () => {
   
   
   return (
-    <section className='home-page'>
+    <main className='home-page'>
       <article className='selector' id='wholesome-block'>
         <h3 className='type-title'>wholesome quote generator</h3>
         <p className='selector-icon'>🥹</p>
@@ -16,7 +16,7 @@ const Home = () => {
         <p className='selector-icon'>😈</p>
         <NavLink to='/poster/chaotic' className='generate-link button-link' id='generate-chaotic'>click here!</NavLink>
       </article>
-    </section>
+    </main>
   )
 }
 

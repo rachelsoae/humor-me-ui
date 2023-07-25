@@ -5,9 +5,9 @@ const Poster = () => {
   const { type } = useParams();
   
   return (
-    <section className={`poster-${type}`}>
+    <main className={`poster poster-${type}`}>
       <p>{`${type}`}</p>
-    </section>
+    </main>
   )
 }
 

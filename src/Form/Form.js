@@ -15,7 +15,7 @@ const Form = () => {
   }
 
   return (
-    <div id='form-page' >
+    <main id='form-page' >
       <h2>make your own quote!</h2>
       <p>Your quote poster will be added to the quotes and can be generated randomly by future users.</p>
       <form onSubmit={handleSubmit}>
@@ -32,7 +32,7 @@ const Form = () => {
           <button className='form-button'>✏️ create</button>
         </div>
       </form>
-    </div>
+    </main>
   )
 }
 
