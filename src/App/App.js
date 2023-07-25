@@ -4,6 +4,7 @@ import Favorites from '../Favorites/Favorites.js'
 import Form from '../Form/Form.js'
 import Home from '../Home/Home.js'
 import Nav from '../Nav/Nav.js'
+import Poster from '../Poster/Poster.js'
 
 const App = () => {
 
@@ -20,9 +21,9 @@ const App = () => {
       <Nav />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='favorites' element={<Favorites />}/>
-        <Route path='create' element={<Form />}/>
-        <Route path='/random-quote-:quote-type' element={<Favorites />}/>
+        <Route path='/favorites' element={<Favorites />}/>
+        <Route path='/create' element={<Form />}/>
+        <Route path='/poster/:type' element={<Poster />}/>
       </Routes>
     </>
   )

@@ -1,8 +1,13 @@
 import './Poster.css';
+import { useParams } from 'react-router-dom';
 
 const Poster = () => {
+  const { type } = useParams();
+  
   return (
-    <p>Poster here</p>
+    <section className={`poster-${type}`}>
+      <p>{`${type}`}</p>
+    </section>
   )
 }
 
