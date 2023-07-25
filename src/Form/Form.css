@@ -1,10 +1,7 @@
 #form-page{
-  background: #FFE5AA;
   border: #FFE5AA solid 2px;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100em;
   font-family: 'Inter', sans-serif;
   color: #1D0F64;
 }
@@ -15,22 +12,18 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
   padding: 2em;
   width: 80%;
   border-radius: 3em;
   height: 20%;
-  /* border: blue 2px solid; */
 }
 
 .buttons{
   display: flex;
   justify-content: space-around;
-  /* border: blue 2px solid; */
 }
 
 .form-button{
-  /* height: 2em; */
   padding: 0.5em;
   width: 20%;
   border-radius: 1.2em;

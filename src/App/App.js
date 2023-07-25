@@ -17,7 +17,7 @@ const App = () => {
     //go to the route - 'random-quote:quote-type' which displays the poster component with a dynamic background color and the poster with the image, quote, and fav button
 
   return (
-    <> 
+    <div className='app'> 
       <Nav />
       <Routes>
         <Route path='/' element={<Home />}/>
@@ -25,7 +25,7 @@ const App = () => {
         <Route path='/create' element={<Form />}/>
         <Route path='/poster/:type' element={<Poster />}/>
       </Routes>
-    </>
+    </div>
   )
 }
 
