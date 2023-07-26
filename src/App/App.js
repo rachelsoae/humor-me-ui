@@ -5,8 +5,34 @@ import Form from '../Form/Form.js'
 import Home from '../Home/Home.js'
 import Nav from '../Nav/Nav.js'
 import Poster from '../Poster/Poster.js'
+import { mockQuotes, mockImages, mockPosters }from '../mockData'
+import {useState} from 'react'
 
 const App = () => {
+
+  const filterQuotes = (type) => {
+    return mockQuotes.quotes.filter(quote => quote.type === type)
+  }
+  
+  const getRandom = (array) => {
+    const index = Math.floor(Math.random() * array.length)
+    return array[index]
+  }
+
+  const [poster, setPoster] = useState({});
+
+  const updatePoster = (type) => {
+    const quote = getRandom(filterQuotes(type)).quote
+    const image = getRandom(mockImages.images).src
+    
+    setPoster(prevState => ({
+      quote: quote,
+      image: image,
+      type: type
+    }))
+
+    setTimeout(console.log('state set:',poster), 2000)
+  }
 
   //when a random button is clicked:
     //fetch all the quotes
@@ -20,10 +46,10 @@ const App = () => {
     <div className='app'> 
       <Nav />
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path='/' element={<Home updatePoster={updatePoster} />}/>
         <Route path='/favorites' element={<Favorites />}/>
         <Route path='/create' element={<Form />}/>
-        <Route path='/poster/:type' element={<Poster />}/>
+        <Route path='/random/:type' element={<Poster poster={poster} />}/>
       </Routes>
     </div>
   )

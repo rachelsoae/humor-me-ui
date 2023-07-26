@@ -1,12 +1,12 @@
 import './Poster.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useState } from 'react-router-dom';
 
-const Poster = () => {
-  const { type } = useParams();
-  
+import Card from '../Card/Card'
+
+const Poster = ({poster}) => {
   return (
-    <main className={`poster poster-${type}`}>
-      <p>{`${type}`}</p>
+    <main className={`poster poster-${poster.type}`}>
+      <Card poster={poster} />
     </main>
   )
 }
