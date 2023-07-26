@@ -5,3 +5,9 @@
 .poster-chaotic {
   background-color: #FF5353;
 }
+
+.poster-container {
+  width: 40%;
+  display: flex; 
+  justify-content: center;
+}

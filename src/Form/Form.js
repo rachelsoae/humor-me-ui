@@ -34,23 +34,25 @@ const Form = ({setPoster}) => {
       <form onSubmit={handleSubmit}>
         <label htmlFor='type-of-poster'>1. select your quote type</label>
         <div className='buttons'>
-          <label htmlFor="wholesome-button" className='form-button' id='wholesome-button'>
+          <label htmlFor="wholesome-radio" className='form-button' id='wholesome-button'>
             <input
               type="radio"
               name="type"
               value="wholesome"
               onChange={handleChange}
               checked={formData.type === 'wholesome'}
+              id="wholesome-radio"
             />
             🥹 wholesome
           </label>
-          <label htmlFor="chaotic-button" className='form-button' id='chaotic-button'  >
+          <label htmlFor="chaotic-radio" className='form-button' id='chaotic-button'  >
             <input
               type="radio"
               name="type"
               value="chaotic"
               onChange={handleChange}
               checked={formData.type === 'chaotic'}
+              id="chaotic-radio"
             />
             😈 chaotic
           </label>

@@ -21,7 +21,9 @@ const Poster = ({poster}) => {
 
   return (
     <main className={`poster poster-${poster.type}`}>
-      <Card image={poster.image} quote={poster.quote} type={poster.type} />
+      <div className='poster-container'>
+        <Card image={poster.image} quote={poster.quote} type={poster.type} />
+      </div> 
     </main>
   )
 }
