@@ -5,7 +5,7 @@ import Form from '../Form/Form.js'
 import Home from '../Home/Home.js'
 import Nav from '../Nav/Nav.js'
 import Poster from '../Poster/Poster.js'
-import { mockQuotes, mockImages }from '../mockData'
+import { mockQuotes, mockImages, mockPosters } from '../mockData'
 import {useState} from 'react'
 
 const App = () => {
@@ -38,6 +38,28 @@ const App = () => {
     setFontSize(param === 'poster' ? '2.5em' : '1em')
   }
 
+
+
+  const saveFavorite = () => {
+    // delete this function when refactoring for POST - this simulates data processing that is done on the server
+    const formatData = (data) => {
+      console.log('data', data)
+      return {
+        "id": Date.now(),
+        "quote": {
+          "text": `${data.quote}`,
+          "type": `${data.type}`
+        },
+        "src": `${data.image}`
+      }
+    }
+  
+    // replace with POST
+    const favorite = formatData(poster);
+    mockPosters.posters.push(favorite);
+    return favorite;
+  }
+
     //fetch all the quotes
       //filter through them to sort by type
       //select a random quote from the filtered array
@@ -52,7 +74,7 @@ const App = () => {
         <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
         <Route path='/favorites' element={<Favorites />}/>
         <Route path='/create' element={<Form setPoster={setPoster} />}/>
-        <Route path='/:type' element={<Poster poster={poster} font={fontSize} />}/>
+        <Route path='/:type' element={<Poster poster={poster} font={fontSize} saveFavorite={saveFavorite} />}/>
       </Routes>
     </div>
   )

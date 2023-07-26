@@ -3,5 +3,5 @@
   display: grid;
   grid-template-columns: repeat(4, 25fr);
   flex-wrap: wrap;
-  
+  height: 100%;
 }
