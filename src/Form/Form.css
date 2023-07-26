@@ -13,9 +13,9 @@ form{
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  width: 80%;
+  height: 50%;
+  width: 60%;
   border-radius: 3em;
-  height: 20%;
 }
 
 .buttons{

@@ -5,10 +5,21 @@ const Form = () => {
 
   const [formData, setFormData] = useState({
     //need to add an id in here somewhere
-    type: '',
-    imgLink: '',
     quote: '',
+    image: '',
+    type: '',
   })
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+  
+    setFormData(prevState => {
+      return {
+        ...prevState, 
+        [name]: value
+      }
+    })
+  }
 
   const handleSubmit = () => {
     //code here for what to do when form is submitted
@@ -21,15 +32,53 @@ const Form = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor='type-of-poster'>1. select your quote type</label>
         <div className='buttons'>
-          <button className='form-button' id='wholesome-button'>🥹 wholesome quote</button>
-          <button className='form-button' id='chaotic-button'>😈 chaotic quote</button>
+          <label htmlFor="wholesome-button" className='form-button' id='wholesome-button'>
+            <input
+              type="radio"
+              name="type"
+              value="wholesome"
+              onChange={handleChange}
+              checked={formData.type === 'wholesome'}
+              className="radio"
+            />
+            🥹 wholesome
+          </label>
+          <label htmlFor="chaotic-button" className='form-button' id='chaotic-button'  >
+            <input
+              type="radio"
+              name="type"
+              value="chaotic"
+              onChange={handleChange}
+              checked={formData.type === 'chaotic'}
+              className="radio"
+            />
+            😈 chaotic
+          </label>
         </div>
-        <label htmlFor='img-url'>2. add you image url</label>
-        <input className='text-input' type='text' placeholder='image link goes here'></input>
+        <label htmlFor='img-url'>2. add your image url</label>
+        <input 
+          className='text-input' 
+          type='text' 
+          placeholder='insert image link here'
+          name='image'
+          onChange={handleChange}
+          value={formData.image}
+        />
         <label htmlFor='img-url'>3. create your quote</label>
-        <input className='text-input'm  type='text' placeholder='quote goes here'></input>
+        <input 
+          className='text-input' 
+          type='text' 
+          placeholder='insert quote here'
+          name='quote'
+          onChange={handleChange}
+          value={formData.quote}
+        />
         <div className='buttons'>
-          <button className='form-button'>✏️ create</button>
+          <input 
+            type="submit" 
+            className='form-button'
+            value="✏️ create"
+          />
         </div>
       </form>
     </main>
