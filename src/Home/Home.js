@@ -2,17 +2,17 @@ import './Home.css';
 import { NavLink } from 'react-router-dom'
 
 
-const Home = ({updatePoster}) => {
+const Home = ({randomizePoster}) => {
   return (
     <main className='home-page'>
       <article className='selector' id='wholesome-block'>
         <h3 className='type-title'>wholesome quote generator</h3>
         <p className='selector-icon'>🥹</p>
         <NavLink 
-          to='/random/wholesome' 
+          to='/wholesome' 
           className='generate-link button-link' 
           id='wholesome'
-          onClick={(e) => updatePoster(e.target.id)}
+          onClick={(e) => randomizePoster(e.target.id)}
         >
           click here!
         </NavLink>
@@ -21,10 +21,10 @@ const Home = ({updatePoster}) => {
         <h3 className='type-title'>chaotic quote generator</h3>
         <p className='selector-icon'>😈</p>
         <NavLink 
-          to='/random/chaotic' 
+          to='/chaotic' 
           className='generate-link button-link' 
           id='chaotic'
-          onClick={(e) => updatePoster(e.target.id)}
+          onClick={(e) => randomizePoster(e.target.id)}
         >
           click here!
         </NavLink>

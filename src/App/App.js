@@ -21,7 +21,7 @@ const App = () => {
 
   const [poster, setPoster] = useState({});
 
-  const updatePoster = (type) => {
+  const randomizePoster = (type) => {
     const quote = getRandom(filterQuotes(type)).quote
     const image = getRandom(mockImages.images).src
     
@@ -43,10 +43,10 @@ const App = () => {
     <div className='app'> 
       <Nav />
       <Routes>
-        <Route path='/' element={<Home updatePoster={updatePoster} />}/>
+        <Route path='/' element={<Home randomizePoster={randomizePoster} />}/>
         <Route path='/favorites' element={<Favorites />}/>
-        <Route path='/create' element={<Form />}/>
-        <Route path='/random/:type' element={<Poster poster={poster} />}/>
+        <Route path='/create' element={<Form setPoster={setPoster} />}/>
+        <Route path='/:type' element={<Poster poster={poster} />}/>
       </Routes>
     </div>
   )

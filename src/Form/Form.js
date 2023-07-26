@@ -1,7 +1,9 @@
 import './Form.css';
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { mockPosters } from '../mockData'
 
-const Form = () => {
+const Form = ({setPoster}) => {
 
   const [formData, setFormData] = useState({
     //need to add an id in here somewhere
@@ -19,11 +21,10 @@ const Form = () => {
         [name]: value
       }
     })
-    console.log(formData)
   }
 
-  const handleSubmit = () => {
-    //code here for what to do when form is submitted
+  const handleSubmit = (event) => {
+    setPoster(formData)
   }
 
   return (
@@ -72,13 +73,16 @@ const Form = () => {
           onChange={handleChange}
           value={formData.quote}
         />
-        <div className='buttons'>
-          <input 
-            type="submit" 
-            className='form-button submit'
-            value="✏️ create"
-          />
-        </div>
+        <Link to={`/${formData.type}`}>
+          <div className='buttons'>
+            <input 
+              type="submit" 
+              className='form-button submit'
+              value="✏️ create"
+              onClick={handleSubmit}
+            />
+          </div>
+        </Link>
       </form>
     </main>
   )
