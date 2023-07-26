@@ -6,12 +6,27 @@ import Home from '../Home/Home.js'
 import Nav from '../Nav/Nav.js'
 import Poster from '../Poster/Poster.js'
 import { mockQuotes, mockImages, mockPosters } from '../mockData'
-import {useState} from 'react'
+import {useState, useEffect } from 'react'
+import { getData } from '../apiCalls'
 
 const App = () => {
+  const [quotes, setQuotes] = useState(mockQuotes.quotes)
+  const [images, setImages] = useState(mockImages.images)
+
+  //// --> hopefully ready for real data - needs testing/debugging
+  // useEffect(() => {
+  //   getData(quotes)
+  //   .then(response => setQuotes(response.quotes))
+  //   .catch(error => alert(error.message))
+
+  //   getData(images)
+  //   .then(response => setImages(response.images))
+  //   .catch(error => alert(error.message))
+  // }, [])
+
 
   const filterQuotes = (type) => {
-    return mockQuotes.quotes.filter(quote => quote.type === type)
+    return quotes.filter(quote => quote.type === type)
   }
   
   const getRandom = (array) => {
@@ -23,7 +38,7 @@ const App = () => {
 
   const randomizePoster = (type) => {
     const quote = getRandom(filterQuotes(type)).quote
-    const image = getRandom(mockImages.images).src
+    const image = getRandom(images).src
     
     setPoster({
       quote: quote,
