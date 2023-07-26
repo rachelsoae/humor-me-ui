@@ -5,7 +5,7 @@ import Form from '../Form/Form.js'
 import Home from '../Home/Home.js'
 import Nav from '../Nav/Nav.js'
 import Poster from '../Poster/Poster.js'
-import { mockQuotes, mockImages, mockPosters }from '../mockData'
+import { mockQuotes, mockImages }from '../mockData'
 import {useState} from 'react'
 
 const App = () => {
@@ -25,16 +25,13 @@ const App = () => {
     const quote = getRandom(filterQuotes(type)).quote
     const image = getRandom(mockImages.images).src
     
-    setPoster(prevState => ({
+    setPoster({
       quote: quote,
       image: image,
       type: type
-    }))
-
-    setTimeout(console.log('state set:',poster), 2000)
+    })
   }
 
-  //when a random button is clicked:
     //fetch all the quotes
       //filter through them to sort by type
       //select a random quote from the filtered array
