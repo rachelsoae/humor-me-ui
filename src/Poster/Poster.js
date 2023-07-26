@@ -1,7 +1,7 @@
 import './Poster.css';
 import Card from '../Card/Card'
 
-const Poster = ({poster}) => {
+const Poster = ({poster, font}) => {
 
   // use to simulate Favoriting
   // const formatData = () => {
@@ -22,7 +22,7 @@ const Poster = ({poster}) => {
   return (
     <main className={`poster poster-${poster.type}`}>
       <div className='poster-container'>
-        <Card image={poster.image} quote={poster.quote} type={poster.type} />
+        <Card image={poster.image} quote={poster.quote} type={poster.type} font={font} />
       </div> 
     </main>
   )

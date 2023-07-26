@@ -32,6 +32,12 @@ const App = () => {
     })
   }
 
+  const [fontSize, setFontSize] = useState('');
+
+  const changeFontSize = (param) => {
+    setFontSize(param === 'poster' ? '2.5em' : '1em')
+  }
+
     //fetch all the quotes
       //filter through them to sort by type
       //select a random quote from the filtered array
@@ -41,12 +47,12 @@ const App = () => {
 
   return (
     <div className='app'> 
-      <Nav />
+      <Nav changeFontSize={changeFontSize} />
       <Routes>
-        <Route path='/' element={<Home randomizePoster={randomizePoster} />}/>
+        <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
         <Route path='/favorites' element={<Favorites />}/>
         <Route path='/create' element={<Form setPoster={setPoster} />}/>
-        <Route path='/:type' element={<Poster poster={poster} />}/>
+        <Route path='/:type' element={<Poster poster={poster} font={fontSize} />}/>
       </Routes>
     </div>
   )
