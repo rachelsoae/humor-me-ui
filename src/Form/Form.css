@@ -13,7 +13,7 @@ form{
   flex-direction: column;
   justify-content: space-between;
   padding: 2em;
-  height: 50%;
+  height: 60%;
   width: 60%;
   border-radius: 3em;
 }
@@ -26,11 +26,15 @@ form{
 .form-button{
   padding: 0.5em;
   width: 20%;
+  height: 2.5rem;
   border-radius: 1.2em;
   border: none;
   font-family: 'Inter', sans-serif;
   color: #1D0F64;
   background: #FFE5AA;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #wholesome-button{
@@ -45,8 +49,13 @@ form{
   border: none;
   padding: 0.5em;
   border-radius: 1em;
+  height: 2rem;
 }
 
 h2{
   margin: 0.5em
+}
+
+.submit {
+  margin-top: 1rem;
 }

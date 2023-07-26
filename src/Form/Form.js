@@ -19,6 +19,7 @@ const Form = () => {
         [name]: value
       }
     })
+    console.log(formData)
   }
 
   const handleSubmit = () => {
@@ -28,7 +29,7 @@ const Form = () => {
   return (
     <main id='form-page' >
       <h2>make your own quote!</h2>
-      <p>Your quote poster will be added to the quotes and can be generated randomly by future users.</p>
+      {/* <p>Your quote poster will be added to the quotes and can be generated randomly by future users.</p> */}
       <form onSubmit={handleSubmit}>
         <label htmlFor='type-of-poster'>1. select your quote type</label>
         <div className='buttons'>
@@ -39,7 +40,6 @@ const Form = () => {
               value="wholesome"
               onChange={handleChange}
               checked={formData.type === 'wholesome'}
-              className="radio"
             />
             🥹 wholesome
           </label>
@@ -50,7 +50,6 @@ const Form = () => {
               value="chaotic"
               onChange={handleChange}
               checked={formData.type === 'chaotic'}
-              className="radio"
             />
             😈 chaotic
           </label>
@@ -76,7 +75,7 @@ const Form = () => {
         <div className='buttons'>
           <input 
             type="submit" 
-            className='form-button'
+            className='form-button submit'
             value="✏️ create"
           />
         </div>
