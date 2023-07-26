@@ -63,3 +63,5 @@ const mockPosters = {
     }
   ]
 }
+
+export { mockQuotes, mockImages, mockPosters }
