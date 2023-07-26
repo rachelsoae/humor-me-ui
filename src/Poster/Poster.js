@@ -2,9 +2,7 @@ import './Poster.css';
 import Card from '../Card/Card'
 
 
-const Poster = ({poster, font, saveFavorite}) => {
-
-
+const Poster = ({poster, font, saveFavorite, randomizePoster}) => {
   return (
     <main className={`poster poster-${poster.type}`}>
       <div className='poster-container'>
@@ -12,8 +10,8 @@ const Poster = ({poster, font, saveFavorite}) => {
       </div> 
       <div className='poster-buttons'>
         <button onClick={saveFavorite}>💛 save to favorites</button>
-        <button>🥹 random wholesome</button>
-        <button>😈 random chaotic</button>
+        <button onClick={() => randomizePoster('wholesome')}>🥹 random wholesome</button>
+        <button onClick={() => randomizePoster('chaotic')}>😈 random chaotic</button>
       </div>
     </main>
   )

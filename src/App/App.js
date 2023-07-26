@@ -38,8 +38,6 @@ const App = () => {
     setFontSize(param === 'poster' ? '2.5em' : '1em')
   }
 
-
-
   const saveFavorite = () => {
     // delete this function when refactoring for POST - this simulates data processing that is done on the server
     const formatData = (data) => {
@@ -74,7 +72,7 @@ const App = () => {
         <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
         <Route path='/favorites' element={<Favorites />}/>
         <Route path='/create' element={<Form setPoster={setPoster} />}/>
-        <Route path='/:type' element={<Poster poster={poster} font={fontSize} saveFavorite={saveFavorite} />}/>
+        <Route path='/:type' element={<Poster poster={poster} font={fontSize} saveFavorite={saveFavorite} randomizePoster={randomizePoster} />}/>
       </Routes>
     </div>
   )
