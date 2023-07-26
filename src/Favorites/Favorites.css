@@ -1,5 +1,5 @@
 #fav-page{
   padding: 1em;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 25fr);
 }
