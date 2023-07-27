@@ -1,4 +1,15 @@
+* {
+  text-decoration: none;
+}
+
+
 .form-button,
 .button-link{
   cursor: pointer;
 }
+
+
+.app {
+  height: 100vh;
+}
+

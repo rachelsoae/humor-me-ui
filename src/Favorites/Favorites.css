@@ -1,8 +1,7 @@
 #fav-page{
-  background: #FFE5AA;
   padding: 1em;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 25fr);
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
+  height: 100%;
 }

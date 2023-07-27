@@ -1,49 +1,46 @@
-#frame{
+.frame {
   background: white;
-  margin: 1em;
+  margin: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* border: solid 2px red; */
   padding: 1em;
   border-radius: 0.01em;
-  width: 18%;
+  width: 80%;
+  aspect-ratio: 1/1;
 }
 
-#img-and-quote{
+.img {
   /* border: solid 2px purple; */
-  position: relative;
-  /* height: 17em */
-}
-
-#quote-img{
   width: 100%;
-  height: 12em;
-  border-radius: 0.02em;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#quote{
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  transform: translate(-13%, -34%);
+.quote {
   color: white;
   text-align: center;
   text-shadow: 0.1em 0.1em 0.1em #1D0F64;
   font-family: 'Kaushan Script', cursive;
-  font-size: 0.8em;
+  padding: 0 1em;
+  margin: 0;
 }
 
-#emojis{
-  padding-top: 0.6em;
+.emojis {
+  margin-top: 0.7em;
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  height: 10%;
 }
 
-.card-button{
+.card-button {
   border: none;
   background: none;
-  font-size: 1.3em;
+  font-size: 1.5em;
   cursor: pointer;
 }

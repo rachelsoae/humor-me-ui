@@ -1,38 +1,92 @@
 import './Form.css';
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { mockPosters } from '../mockData'
 
-const Form = () => {
+const Form = ({setPoster}) => {
 
   const [formData, setFormData] = useState({
     //need to add an id in here somewhere
-    type: '',
-    imgLink: '',
     quote: '',
+    image: '',
+    type: '',
   })
 
-  const handleSubmit = () => {
-    //code here for what to do when form is submitted
+  const handleChange = (event) => {
+    const { name, value } = event.target
+  
+    setFormData(prevState => {
+      return {
+        ...prevState, 
+        [name]: value
+      }
+    })
+  }
+
+  const handleSubmit = (event) => {
+    setPoster(formData)
   }
 
   return (
-    <div id='form-page' >
+    <main id='form-page' >
       <h2>make your own quote!</h2>
-      <p>Your quote poster will be added to the quotes and can be generated randomly by future users.</p>
+      {/* <p>Your quote poster will be added to the quotes and can be generated randomly by future users.</p> */}
       <form onSubmit={handleSubmit}>
         <label htmlFor='type-of-poster'>1. select your quote type</label>
         <div className='buttons'>
-          <button className='form-button' id='wholesome-button'>🥹 wholesome quote</button>
-          <button className='form-button' id='chaotic-button'>😈 chaotic quote</button>
+          <label htmlFor="wholesome-radio" className='form-button' id='wholesome-button'>
+            <input
+              type="radio"
+              name="type"
+              value="wholesome"
+              onChange={handleChange}
+              checked={formData.type === 'wholesome'}
+              id="wholesome-radio"
+            />
+            🥹 wholesome
+          </label>
+          <label htmlFor="chaotic-radio" className='form-button' id='chaotic-button'  >
+            <input
+              type="radio"
+              name="type"
+              value="chaotic"
+              onChange={handleChange}
+              checked={formData.type === 'chaotic'}
+              id="chaotic-radio"
+            />
+            😈 chaotic
+          </label>
         </div>
-        <label htmlFor='img-url'>2. add you image url</label>
-        <input className='text-input' type='text' placeholder='image link goes here'></input>
+        <label htmlFor='img-url'>2. add your image url</label>
+        <input 
+          className='text-input' 
+          type='text' 
+          placeholder='insert image link here'
+          name='image'
+          onChange={handleChange}
+          value={formData.image}
+        />
         <label htmlFor='img-url'>3. create your quote</label>
-        <input className='text-input'm  type='text' placeholder='quote goes here'></input>
-        <div className='buttons'>
-          <button className='form-button'>✏️ create</button>
-        </div>
+        <input 
+          className='text-input' 
+          type='text' 
+          placeholder='insert quote here'
+          name='quote'
+          onChange={handleChange}
+          value={formData.quote}
+        />
+        <Link to={`/${formData.type}`}>
+          <div className='buttons'>
+            <input 
+              type="submit" 
+              className='form-button submit'
+              value="✏️ create"
+              onClick={handleSubmit}
+            />
+          </div>
+        </Link>
       </form>
-    </div>
+    </main>
   )
 }
 

@@ -1,22 +1,14 @@
 import './Favorites.css';
 import Card from '../Card/Card.js'
+import { mockPosters } from '../mockData'
 
 const Favorites = () => {
-
-  //eventually we will bring the favorites in from the app, map through them, and then display them on the dom using the Cards component
+  const favorites = mockPosters.posters.map(poster => <Card key={poster.id} image={poster.src} quote={poster.quote.text} type={poster.quote.type} font='1.3em'/>)
   
   return (
-    <div id='fav-page'>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </div>
+    <main id='fav-page'>
+      {favorites}
+    </main>
   )
 }
 
