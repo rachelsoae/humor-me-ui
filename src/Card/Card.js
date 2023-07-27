@@ -20,7 +20,6 @@ const Card = ({image, quote, type, font}) => {
       </div>
       <div className='emojis'>
         <button className='card-button'>{type === 'wholesome' ? '🥹' : '😈'}</button>
-        <button className='card-button'>🗑️</button>
       </div>
     </article>
   )
