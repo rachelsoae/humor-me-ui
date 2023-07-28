@@ -16,6 +16,11 @@ nav {
   text-decoration: none;
 }
 
+.nav-button:hover{
+  background:#FFE5AA;
+  color:#1D0F64;
+}
+
 .nav-button.active{
   background: #FFE5AA;
   color: #1D0F64;

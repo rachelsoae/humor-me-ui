@@ -21,13 +21,22 @@
 .poster-buttons {
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  width: 70%;
 }
 
 .poster-button{
+  font-size: 1.25em;
   border: none;
   border-radius: 1.5em;
   background: #1D0F64;
   color: white;
   padding: 0.5em;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
 }
+
+.poster-button:hover{
+  background: #FFE5AA;
+  color:#1D0F64;
+}
+
