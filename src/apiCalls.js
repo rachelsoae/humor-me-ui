@@ -3,12 +3,22 @@ const getData = (data) => {
   .then(response => handleResponse(response))
 }
 
+const postFavorite = (data) => {
+  return fetch(`https://stretch-api.onrender.com/api/v1/posters`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(response => handleResponse(response))
+}
+
 const handleResponse = (response) => {
   if (response.ok) {
     return response.json();
   } else {
-    throw new Error(`Oops! There was an error. ${response.status}: ${response.statusText}`)
+    throw new Error(`Oops! There was an error: Status ${response.status}`)
   }
 }
 
-export { getData }
+export { getData, postFavorite }

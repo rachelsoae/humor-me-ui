@@ -6,7 +6,7 @@ const Poster = ({poster, font, saveFavorite, randomizePoster}) => {
   return (
     <main className={`poster poster-${poster.type}`}>
       <div className='poster-container'>
-        <Card image={poster.image} quote={poster.quote} type={poster.type} font={font} />
+        <Card image={poster.src} quote={poster.quote} type={poster.type} font={font} />
       </div> 
       <div className='poster-buttons'>
         <button className='poster-button' onClick={saveFavorite}>💛 save to favorites</button>

@@ -7,12 +7,14 @@ import Nav from '../Nav/Nav.js'
 import Poster from '../Poster/Poster.js'
 import { mockQuotes, mockImages, mockPosters } from '../mockData'
 import {useState, useEffect } from 'react'
-import { getData } from '../apiCalls'
+import { getData, postFavorite } from '../apiCalls'
 
 const App = () => {
   const [quotes, setQuotes] = useState([]);
   const [images, setImages] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [poster, setPoster] = useState({});
+  const [fontSize, setFontSize] = useState('');
 
   useEffect(() => {
     getData('quotes')
@@ -38,58 +40,33 @@ const App = () => {
     return array[index]
   }
 
-  const [poster, setPoster] = useState({});
-
   const randomizePoster = (type) => {
     const quote = getRandom(filterQuotes(type)).quote
     const image = getRandom(images).image_src
     
     setPoster({
       quote: quote,
-      image: image,
-      type: type
+      type: type,
+      src: image
     })
   }
 
-  const [fontSize, setFontSize] = useState('');
-
-  const changeFontSize = (param) => {
-    setFontSize(param === 'poster' ? '2.5em' : '1em')
+  const changeFontSize = (component) => {
+    setFontSize(component === 'poster' ? '2.5em' : '1em')
   }
 
   const saveFavorite = () => {
-    // delete this function when refactoring for POST - this simulates data processing that is done on the server
-    const formatData = (data) => {
-      console.log('data', data)
-      return {
-        "id": Date.now(),
-        "quote": {
-          "text": `${data.quote}`,
-          "type": `${data.type}`
-        },
-        "src": `${data.image}`
-      }
-    }
-  
-    // replace with POST
-    const favorite = formatData(poster);
-    mockPosters.posters.push(favorite);
-    return favorite;
+    postFavorite(poster)
+    .then(response => setFavorites(prevState => [...prevState, response.poster]))
+    .catch(error => alert(error.message))
   }
-
-    //fetch all the quotes
-      //filter through them to sort by type
-      //select a random quote from the filtered array
-    //fetch all the images
-      //select random image
-    //go to the route - 'random-quote:quote-type' which displays the poster component with a dynamic background color and the poster with the image, quote, and fav button
 
   return (
     <div className='app'> 
       <Nav changeFontSize={changeFontSize} />
       <Routes>
         <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
-        <Route path='/favorites' element={<Favorites />}/>
+        <Route path='/favorites' element={<Favorites favorites={favorites} />}/>
         <Route path='/create' element={<Form setPoster={setPoster} />}/>
         <Route path='/:type' element={<Poster poster={poster} font={fontSize} saveFavorite={saveFavorite} randomizePoster={randomizePoster} />}/>
       </Routes>

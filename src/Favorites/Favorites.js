@@ -1,13 +1,13 @@
 import './Favorites.css';
 import Card from '../Card/Card.js'
-import { mockPosters } from '../mockData'
+// import { mockPosters } from '../mockData'
 
-const Favorites = () => {
-  const favorites = mockPosters.posters.map(poster => <Card key={poster.id} image={poster.src} quote={poster.quote.text} type={poster.quote.type} font='1.3em'/>)
+const Favorites = ({favorites}) => {
+  const cards = favorites.map(favorite => <Card key={favorite.id} image={favorite.src} quote={favorite.quote} type={favorite.type} font='1.3em'/>)
   
   return (
     <main id='fav-page'>
-      {favorites}
+      {cards ? cards : (<h2 className='error-no-favorites'>You haven't saved any favorites yet!</h2>)}
     </main>
   )
 }
