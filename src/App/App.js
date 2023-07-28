@@ -5,7 +5,6 @@ import Form from '../Form/Form.js'
 import Home from '../Home/Home.js'
 import Nav from '../Nav/Nav.js'
 import Poster from '../Poster/Poster.js'
-import { mockQuotes, mockImages, mockPosters } from '../mockData'
 import {useState, useEffect } from 'react'
 import { getData, postFavorite } from '../apiCalls'
 

@@ -1,6 +1,5 @@
 import './Favorites.css';
 import Card from '../Card/Card.js'
-// import { mockPosters } from '../mockData'
 
 const Favorites = ({favorites}) => {
   const cards = favorites.map(favorite => <Card key={favorite.id} image={favorite.src} quote={favorite.quote} type={favorite.type} font='1.3em'/>)
