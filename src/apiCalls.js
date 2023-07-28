@@ -1,5 +1,5 @@
 const getData = (data) => {
-  return fetch(`https://stretch-cb17271b7d66.herokuapp.com/api/v1/${data}`)
+  return fetch(`https://stretch-api.onrender.com/api/v1/${data}`)
   .then(response => handleResponse(response))
 }
 

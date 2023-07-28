@@ -10,19 +10,23 @@ import {useState, useEffect } from 'react'
 import { getData } from '../apiCalls'
 
 const App = () => {
-  const [quotes, setQuotes] = useState(mockQuotes.quotes)
-  const [images, setImages] = useState(mockImages.images)
+  const [quotes, setQuotes] = useState([]);
+  const [images, setImages] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
-  //// --> hopefully ready for real data - needs testing/debugging
-  // useEffect(() => {
-  //   getData(quotes)
-  //   .then(response => setQuotes(response.quotes))
-  //   .catch(error => alert(error.message))
+  useEffect(() => {
+    getData('quotes')
+    .then(response => setQuotes(response.quotes))
+    .catch(error => alert(error.message))
 
-  //   getData(images)
-  //   .then(response => setImages(response.images))
-  //   .catch(error => alert(error.message))
-  // }, [])
+    getData('images')
+    .then(response => setImages(response))
+    .catch(error => alert(error.message))
+
+    getData('posters')
+    .then(response => setFavorites(response))
+    .catch(error => alert(error.message))
+  }, [])
 
 
   const filterQuotes = (type) => {
@@ -38,7 +42,7 @@ const App = () => {
 
   const randomizePoster = (type) => {
     const quote = getRandom(filterQuotes(type)).quote
-    const image = getRandom(images).src
+    const image = getRandom(images).image_src
     
     setPoster({
       quote: quote,
