@@ -9,9 +9,9 @@ const Poster = ({poster, font, saveFavorite, randomizePoster}) => {
         <Card image={poster.image} quote={poster.quote} type={poster.type} font={font} />
       </div> 
       <div className='poster-buttons'>
-        <button onClick={saveFavorite}>💛 save to favorites</button>
-        <button onClick={() => randomizePoster('wholesome')}>🥹 random wholesome</button>
-        <button onClick={() => randomizePoster('chaotic')}>😈 random chaotic</button>
+        <button className='poster-button' onClick={saveFavorite}>💛 save to favorites</button>
+        <button className='poster-button' onClick={() => randomizePoster('wholesome')}>🥹 random wholesome</button>
+        <button className='poster-button' onClick={() => randomizePoster('chaotic')}>😈 random chaotic</button>
       </div>
     </main>
   )
