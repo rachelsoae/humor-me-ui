@@ -1,0 +1,29 @@
+.main-error,
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error-container {
+  background-color: white;
+  height: 50%;
+  border-radius: 10em;
+}
+
+.error-message {
+  padding: 3rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.error-message,
+#error-home-button {
+  font-family: 'Inter', sans-serif;
+}
+
+#error-home-button {
+  width: 20%;
+  text-align: center;
+}

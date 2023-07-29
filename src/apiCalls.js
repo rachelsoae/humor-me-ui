@@ -17,7 +17,7 @@ const handleResponse = (response) => {
   if (response.ok) {
     return response.json();
   } else {
-    throw new Error(`Oops! There was an error: Status ${response.status}`)
+    throw new Error(`${response.status}`)
   }
 }
 
