@@ -14,7 +14,7 @@ const Home = ({randomizePoster, changeFontSize}) => {
         <h3 className='type-title'>wholesome quote generator</h3>
         <p className='selector-icon'>🥹</p>
         <NavLink 
-          to='/wholesome' 
+          to='/poster/wholesome' 
           className='generate-link button-link' 
           id='wholesome'
           onClick={setupPoster}
@@ -26,7 +26,7 @@ const Home = ({randomizePoster, changeFontSize}) => {
         <h3 className='type-title'>chaotic quote generator</h3>
         <p className='selector-icon'>😈</p>
         <NavLink 
-          to='/chaotic' 
+          to='/poster/chaotic' 
           className='generate-link button-link' 
           id='chaotic'
           onClick={setupPoster}

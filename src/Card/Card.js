@@ -2,7 +2,6 @@ import './Card.css';
 
 
 const Card = ({image, quote, type, font}) => {
-  // const backgroundImage = 'https://www.mattpaynephotography.com/images/960/San-Juan-Mountains-Sunrise-Panorama.webp' 
   return (
     <article className='frame'>
       <div 

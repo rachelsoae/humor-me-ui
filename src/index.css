@@ -7,11 +7,11 @@ body {
 
 body {
   min-height: 100vh;
+  background-color: #FFE5AA;
 }
 
 main {
   height: 85%;
-  background-color: #FFE5AA;
   display: flex;
   justify-content: center;
 }

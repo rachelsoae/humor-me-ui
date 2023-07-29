@@ -1,7 +1,14 @@
-#fav-page{
+.fav-page{
+  height: 100%;
+}
+
+.cards-grid {
   padding: 1em;
   display: grid;
   grid-template-columns: repeat(4, 25fr);
   flex-wrap: wrap;
-  height: 100%;
+}
+
+.no-favorites {
+  margin-top: 5%;
 }
