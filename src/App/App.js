@@ -16,6 +16,7 @@ const App = () => {
   const [poster, setPoster] = useState({});
   const [fontSize, setFontSize] = useState('');
   const [error, setError] = useState('');
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     getData('quotes')
@@ -32,6 +33,7 @@ const App = () => {
   }, [])
 
   const saveFavorite = () => {
+    setIsFavorite(true)
     postFavorite(poster)
     .then(response => setFavorites(prevState => [...prevState, response.poster]))
     .catch(error => setError(error.message))
@@ -55,6 +57,8 @@ const App = () => {
       type: type,
       src: image
     })
+
+    setIsFavorite(false)
   }
 
   const changeFontSize = (component) => {
@@ -70,7 +74,15 @@ const App = () => {
         <Route path='/error' element={<Error error={error} />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />}/>
         <Route path='/create' element={<Form setPoster={setPoster} />}/>
-        <Route path='/poster/:type' element={<Poster poster={poster} font={fontSize} saveFavorite={saveFavorite} randomizePoster={randomizePoster} />}/>
+        <Route 
+          path='/poster/:type' 
+          element={<Poster 
+            poster={poster} 
+            font={fontSize} 
+            saveFavorite={saveFavorite} 
+            randomizePoster={randomizePoster}  
+            isFavorite={isFavorite} 
+            />}/>
         <Route path='*' element={<Error error={error} />} />
       </Routes>
     </div>
