@@ -1,15 +1,16 @@
-.main-error,
+.main-error {
+  margin-top: 5%;
+}
+
 .error-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.error-container {
   background-color: white;
   height: 50%;
   border-radius: 10em;
+ 
 }
 
 .error-message {
