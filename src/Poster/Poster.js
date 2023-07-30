@@ -1,7 +1,7 @@
 import './Poster.css';
 import Card from '../Card/Card'
 import PropTypes from 'prop-types'
-import Home from '../Home/Home'
+import Error from '../Error/Error'
 import { NavLink } from 'react-router-dom'
 
 const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
@@ -19,7 +19,7 @@ const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
           {isFavorite ? <p className='poster-button saved'>Saved!</p> : <button className='poster-button' onClick={saveFavorite}>💛 save to favorites</button>}
         </div> 
       </>
-      : <NavLink to='/' className='poster-button'>🤕 Oops! No poster here! Click to go back the generate page. 🤕</NavLink>}
+      : <Error />}
     </main>
   )
 }
