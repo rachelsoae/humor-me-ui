@@ -43,7 +43,8 @@ describe('Random Poster Page', () => {
   it('Should randomly generate posters and save favorites', () => {
     stubRequest('POST', '/posters', 201, 'newPoster')
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
-      cy.visit('http://localhost:3000/poster/wholesome')
+      cy.get('#wholesome').should('have.text', 'click here!').click()
+        .url().should('eq', 'http://localhost:3000/poster/wholesome')
         .get('.poster-buttons').children().first().click()
         .get('.frame').find('.img')
         .get('.img').find('.quote')
