@@ -11,7 +11,7 @@ Humor Me is a web application that encourages users to laugh and feel light thro
 - add gif of user randomly generating a wholesome quote, then a chaotic one
 
 ## Context
-This project was completed during Mod 3 of Turing. The goal of this project was to learn and immplement a new technology. We chose to build a backend server <link here> to host our quotes, and images, as well as save any user favorited posters. 
+This project was completed during Mod 3 of Turing. The goal of this project was to learn and immplement a new technology. We chose to build a backend server (linked [here](https://github.com/rachelsoae/stretch-be)) to host our quotes, and images, as well as save any user favorited posters. 
 
 ## Contributors
 - [Jamie Caudill](https://github.com/JamieCaudill)
