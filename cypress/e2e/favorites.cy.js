@@ -26,6 +26,13 @@ describe('Favorites Page', () => {
     })
   })
 
+  it('Should display a helpful message if no favorites are saved', () => {
+    stubRequest('/posters', 200, 'null').as('getNull')
+    cy.wait('@getQuotes').wait('@getImages').wait('@getNull').then((interception) => {
+      cy.get('h2').should('have.text', "💛 You haven't saved any favorites yet! 💛")
+    })
+  })
+
   it('Should handle 404 errors and navigate the user back to the home page', () => {
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
       cy.visit('http://localhost:3000/error')
