@@ -33,12 +33,12 @@
   cursor: pointer;
   margin: 1rem;
   text-align: center;
+  border: #1D0F64 solid 2px
 }
 
 .poster-button:hover{
   background: #FFE5AA;
   color:#1D0F64;
-  border: #1D0F64 solid 2px
 }
 
 .saved:hover {
