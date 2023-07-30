@@ -24,7 +24,22 @@ describe('Home Page', () => {
     })
   })
 
-  it.only('Should click on nav buttons and take the user to their respective routes', () => {
+  it('Should display two quote generators that take the user to their respective routes', () => {
+    cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
+      cy.get('.home-page').children().should('have.length', 2)
+        .get('.selector').first().contains('h3', 'wholesome quote generator')
+        .get('.selector').first().contains('p', '🥹')
+        .get('#wholesome').should('have.text', 'click here!').click()
+        .url().should('eq', 'http://localhost:3000/poster/wholesome')
+        .get('.navbar').find('h1').click()
+        .get('.selector').last().contains('h3', 'chaotic quote generator')
+        .get('.selector').last().contains('p', '😈')
+        .get('#chaotic').should('have.text', 'click here!').click()
+        .url().should('eq', 'http://localhost:3000/poster/chaotic')
+    })
+  })
+
+  it('Should click on nav buttons and take the user to their respective routes', () => {
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
       cy.get('.nav-buttons').children().last().click()
         .url().should('eq', 'http://localhost:3000/create')
@@ -36,5 +51,4 @@ describe('Home Page', () => {
         .url().should('eq', 'http://localhost:3000/')
     })
   })
-
 })
