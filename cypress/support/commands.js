@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('stubRequest', (method, url, code, fixture) => {
+  return cy.intercept(method, `https://stretch-api.onrender.com/api/v1${url}`, {
+    statusCode: code,
+    fixture: fixture
+  })
+})

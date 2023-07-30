@@ -1,16 +1,8 @@
 describe('Random Poster Page', () => {
-
-  const stubRequest = (method, url, code, fixture) => {
-    return cy.intercept(method, `https://stretch-api.onrender.com/api/v1${url}`, {
-      statusCode: code,
-      fixture: fixture
-    });
-  }
-
   beforeEach(() => {
-    stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
-    stubRequest('GET', '/images', 200, 'images').as('getImages')
-    stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
+    cy.stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
+    cy.stubRequest('GET', '/images', 200, 'images').as('getImages')
+    cy.stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
     cy.visit('http://localhost:3000')
   })
 
@@ -41,7 +33,7 @@ describe('Random Poster Page', () => {
   })
 
   it('Should randomly generate posters and save favorites', () => {
-    stubRequest('POST', '/posters', 201, 'newPoster')
+    cy.stubRequest('POST', '/posters', 201, 'newPoster')
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
       cy.get('#wholesome').should('have.text', 'click here!').click()
         .url().should('eq', 'http://localhost:3000/poster/wholesome')
