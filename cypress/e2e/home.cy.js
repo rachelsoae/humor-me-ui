@@ -51,8 +51,22 @@ describe('Home Page', () => {
         .url().should('eq', 'http://localhost:3000/')
     })
   })
+})
+
+describe('Error handling', () => {
+
+  const stubRequest = (url, code, fixture) => {
+    return cy.intercept('GET', `https://stretch-api.onrender.com/api/v1${url}`, {
+      statusCode: code,
+      fixture: fixture
+    });
+  }
 
   it('Should handle 404 errors and navigate the user back to the home page', () => {
+    stubRequest('/quotes', 200, 'quotes').as('getQuotes')
+    stubRequest('/images', 200, 'images').as('getImages')
+    stubRequest('/posters', 200, 'posters').as('getPosters')
+    cy.visit('http://localhost:3000')
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
       cy.visit('http://localhost:3000/error')
         .get('.error-message').should('have.text', "🤕  Uh-oh... There's been an error  🤕")
@@ -65,6 +79,7 @@ describe('Home Page', () => {
     stubRequest('/quotes', 500, 'quotes').as('dropQuotes')
     stubRequest('/images', 500, 'images').as('dropImages')
     stubRequest('/posters', 500, 'posters').as('dropPosters')
+    cy.visit('http://localhost:3000')
     cy.wait('@dropQuotes').wait('@dropImages').wait('@dropPosters').then((interception) => {
       cy.get('.error-message').should('have.text', "🤕  Uh-oh... There's been an error  🤕")
         .get('#error-home-button').should('have.text', '😄 go home')
