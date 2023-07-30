@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     getData('quotes')
-    .then(response => setQuotes(response.quotes))
+    .then(response => setQuotes(response))
     .catch(error => setError(error.message))
 
     getData('images')
