@@ -1,6 +1,6 @@
 import './Poster.css';
 import Card from '../Card/Card'
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
   return (
@@ -18,3 +18,11 @@ const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
 }
 
 export default Poster;
+
+Poster.propTypes = {
+  poster: PropTypes.object.isRequired,
+  font: PropTypes.string.isRequired,
+  saveFavorite: PropTypes.func.isRequired,
+  randomizePoster: PropTypes.func.isRequired,
+  isFavorite: PropTypes.bool.isRequired
+}

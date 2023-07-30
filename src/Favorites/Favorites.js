@@ -1,5 +1,6 @@
 import './Favorites.css';
 import Card from '../Card/Card.js'
+import PropTypes from 'prop-types'
 
 const Favorites = ({favorites}) => {
   const cards = favorites.map(favorite => <Card key={favorite.id} image={favorite.image} quote={favorite.quote} type={favorite.type} font='1.3em'/>)
@@ -16,3 +17,7 @@ const Favorites = ({favorites}) => {
 }
 
 export default Favorites;
+
+Favorites.propTypes = {
+  favorites: PropTypes.array.isRequired
+}

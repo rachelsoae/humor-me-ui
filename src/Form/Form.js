@@ -1,6 +1,7 @@
 import './Form.css';
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Form = ({setPoster}) => {
 
@@ -88,3 +89,7 @@ const Form = ({setPoster}) => {
 }
 
 export default Form;
+
+Form.propTypes = {
+  setPoster: PropTypes.func.isRequired
+}
