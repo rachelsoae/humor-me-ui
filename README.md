@@ -30,3 +30,11 @@ Back End Tech Stack
 - Postgres
 
 ## Goals and Achievements
+
+## Future Extensions
+Given more time on this porject or upon revisting this project, extensions include: 
+- Adding delete functionality to allow a user to delete favorited posters
+- Adding filter functionality to allow the user to filter favorites quotes by wholesome or chaotic
+- Adding functionality for user created quotes and images to be added to the database and be generated randomly in the future.
+
+Because building the backend was part of this project we would also need to add the appropriate endpoints in the server for all of the above extensions. Some already exsist, see the [back end README](https://github.com/rachelsoae/stretch-be) for existing endpoints. 
