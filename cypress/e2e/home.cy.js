@@ -51,4 +51,23 @@ describe('Home Page', () => {
         .url().should('eq', 'http://localhost:3000/')
     })
   })
+
+  it('Should handle 404 errors and navigate the user back to the home page', () => {
+    cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
+      cy.visit('http://localhost:3000/error')
+        .get('.error-message').should('have.text', "🤕  Uh-oh... There's been an error  🤕")
+        .get('#error-home-button').should('have.text', '😄 go home').click()
+        .url().should('eq', 'http://localhost:3000/')
+    })
+  })
+
+  it('Should handle 500 level errors', () => {
+    stubRequest('/quotes', 500, 'quotes').as('dropQuotes')
+    stubRequest('/images', 500, 'images').as('dropImages')
+    stubRequest('/posters', 500, 'posters').as('dropPosters')
+    cy.wait('@dropQuotes').wait('@dropImages').wait('@dropPosters').then((interception) => {
+      cy.get('.error-message').should('have.text', "🤕  Uh-oh... There's been an error  🤕")
+        .get('#error-home-button').should('have.text', '😄 go home')
+    })
+  })
 })
