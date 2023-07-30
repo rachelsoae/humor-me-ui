@@ -37,6 +37,7 @@ describe('Create Page', () => {
         .get('input[type="submit"]').click()
         .url().should('eq', 'http://localhost:3000/poster/wholesome')
         .get('.quote').should('have.text', 'Example Quote')
+        .get('.emojis').contains('button', '🥹')
     })
   })
 })
