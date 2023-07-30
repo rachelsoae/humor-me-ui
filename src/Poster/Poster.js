@@ -1,12 +1,12 @@
 import './Poster.css';
 import Card from '../Card/Card'
+import { useState } from 'react'
 
 const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
-  console.log(poster)
   return (
     <main className={`poster poster-${poster.type}`}>
       <div className='poster-container'>
-        <Card image={poster.image} quote={poster.quote} type={poster.type} font={font} />
+        <Card image={poster.src} quote={poster.quote} type={poster.type} font={font} />
       </div> 
       <div className='poster-buttons'>
         <button className='poster-button' onClick={() => randomizePoster('wholesome')}>🥹 random wholesome</button>
