@@ -11,6 +11,12 @@ const Form = ({setPoster}) => {
     image: ''
   })
 
+  const defaultFormData = {
+    quote: 'You had one job! Fill out the form! All of it!',
+    type: 'chaotic',
+    image: 'https://images.unsplash.com/photo-1561049501-e1f96bdd98fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=678&q=80'
+  }
+
   const handleChange = (event) => {
     const { name, value } = event.target
   
@@ -23,7 +29,12 @@ const Form = ({setPoster}) => {
   }
 
   const handleSubmit = () => {
-    setPoster(formData)
+
+    if (!formData.quote || !formData.type || !formData.image) {
+      setPoster(defaultFormData)
+    } else {
+      setPoster(formData)
+    }
   }
 
   return (
@@ -73,7 +84,7 @@ const Form = ({setPoster}) => {
           onChange={handleChange}
           value={formData.quote}
         />
-        <Link to={`/poster/${formData.type}`}>
+        <Link to={`/poster/${formData.type || 'chaotic'}`}>
           <div className='buttons'>
             <input 
               type="submit" 
