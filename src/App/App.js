@@ -36,7 +36,6 @@ const App = () => {
     setIsFavorite(true)
     postFavorite(poster)
     .then(response => setFavorites(prevState => [...prevState, response.poster]))
-    .then(() => setIsFavorite(false))
     .catch(error => setError(error.message))
   }
 
@@ -73,7 +72,7 @@ const App = () => {
         <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
         <Route path='/error' element={<Error error={error} />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />}/>
-        <Route path='/create' element={<Form setPoster={setPoster} />}/>
+        <Route path='/create' element={<Form setPoster={setPoster} setIsFavorite={setIsFavorite}/>}/>
         <Route 
           path='/poster/:type' 
           element={<Poster 
