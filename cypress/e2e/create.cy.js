@@ -1,20 +1,20 @@
 describe('Create Page', () => {
 
-  const stubRequest = (url, code, fixture) => {
-    return cy.intercept('GET', `https://stretch-api.onrender.com/api/v1${url}`, {
+  const stubRequest = (method, url, code, fixture) => {
+    return cy.intercept(method, `https://stretch-api.onrender.com/api/v1${url}`, {
       statusCode: code,
       fixture: fixture
     });
   }
 
   beforeEach(() => {
-    stubRequest('/quotes', 200, 'quotes').as('getQuotes')
-    stubRequest('/images', 200, 'images').as('getImages')
-    stubRequest('/posters', 200, 'posters').as('getPosters')
+    stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
+    stubRequest('GET', '/images', 200, 'images').as('getImages')
+    stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
     cy.visit('http://localhost:3000/create')
   })
 
-  it.only('Should display a form to create a custom poster', () => {
+  it('Should display a form to create a custom poster', () => {
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
       cy.get('#form-page').contains('h2', 'make your own quote!')
         .get('form').contains('label', '1. select your quote type')
@@ -28,4 +28,13 @@ describe('Create Page', () => {
     })
   })
 
+  it('Should submit a poster based on user input', () => {
+    cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
+      cy.get('.form-button').first().click()
+        .get('input[type="text"]').first().type('example.com')
+        .get('input[type="text"]').last().type('Example Quote')
+        .get('input[type="submit"]').click()
+        .url().should('eq', 'http://localhost:3000/poster/wholesome')
+    })
+  })
 })
