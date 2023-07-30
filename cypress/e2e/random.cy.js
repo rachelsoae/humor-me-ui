@@ -40,4 +40,18 @@ describe('Random Poster Page', () => {
     })
   })
 
+  it('Should randomly generate posters and save favorites', () => {
+    stubRequest('POST', '/posters', 201, 'newPoster')
+    cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
+      cy.visit('http://localhost:3000/poster/wholesome')
+        .get('.poster-buttons').children().first().click()
+        .get('.frame').find('.img')
+        .get('.img').find('.quote')
+        .get('.emojis').contains('button', '🥹')
+        .get('.poster-buttons').children().eq(1).click()
+        .get('.frame').find('.img')
+        .get('.img').find('.quote')
+        .get('.emojis').contains('button', '😈')
+    })
+  })
 })
