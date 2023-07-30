@@ -15,7 +15,7 @@ OR
 Happy viewing! 
 
 ## Preview of Application
-- add gif of user randomly generating a wholesome quote, then a chaotic one
+![HumorMe](https://github.com/rachelsoae/humor-me-ui/assets/125763236/71761667-8d86-4f28-85bb-6da4fac1a7f4)
 
 ## Context
 This project was completed during Mod 3 of Turing. The goal of this project was to learn and immplement a new technology. We chose to build a backend server (linked [here](https://github.com/rachelsoae/stretch-be)) to host our quotes, and images, as well as save any user favorited posters. 
