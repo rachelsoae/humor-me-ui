@@ -3,7 +3,16 @@
 Humor Me is a web application that encourages users to laugh and feel light through the generation of random quotes. The user has the option to generate quotes in either a wholesome or chaotic category to best fit their modd in the moment. Additional features include allowing the user to favorite quote posters and create their own. 
 
 ## Viewing the Application
-- add link to deployed site here
+(View our app here)[https://humor-me-ui.vercel.app/]
+
+OR
+
+1. Clone down the repo to your machine using `git clone`
+2. `cd` into the directory 
+3. run `npm install`
+4. run `npm start`
+
+Happy viewing! 
 
 ## Preview of Application
 - add gif of user randomly generating a wholesome quote, then a chaotic one
