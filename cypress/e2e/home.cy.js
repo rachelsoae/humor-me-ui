@@ -1,8 +1,6 @@
 describe('Home Page', () => {
   beforeEach(() => {
-    cy.stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
-    cy.stubRequest('GET', '/images', 200, 'images').as('getImages')
-    cy.stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
+    cy.loadData();
     cy.visit('http://localhost:3000')
   })
 
@@ -47,9 +45,7 @@ describe('Home Page', () => {
 
 describe('Home page error handling', () => {
   it('Should handle 404 errors and navigate the user back to the home page', () => {
-    cy.stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
-    cy.stubRequest('GET', '/images', 200, 'images').as('getImages')
-    cy.stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
+    cy.loadData();
     cy.visit('http://localhost:3000')
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
       cy.visit('http://localhost:3000/error')

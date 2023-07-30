@@ -30,3 +30,9 @@ Cypress.Commands.add('stubRequest', (method, url, code, fixture) => {
     fixture: fixture
   })
 })
+
+Cypress.Commands.add('loadData', () => {
+  cy.stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
+  cy.stubRequest('GET', '/images', 200, 'images').as('getImages')
+  cy.stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
+});

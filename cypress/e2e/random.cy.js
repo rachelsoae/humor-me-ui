@@ -1,8 +1,6 @@
 describe('Random Poster Page', () => {
   beforeEach(() => {
-    cy.stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
-    cy.stubRequest('GET', '/images', 200, 'images').as('getImages')
-    cy.stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
+    cy.loadData();
     cy.visit('http://localhost:3000')
   })
 
