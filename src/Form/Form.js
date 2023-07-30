@@ -7,7 +7,7 @@ const Form = ({setPoster}) => {
   const [formData, setFormData] = useState({
     quote: '',
     type: '',
-    src: ''
+    image: ''
   })
 
   const handleChange = (event) => {
@@ -59,7 +59,7 @@ const Form = ({setPoster}) => {
           className='text-input' 
           type='text' 
           placeholder='insert image link here'
-          name='src'
+          name='image'
           onChange={handleChange}
           value={formData.src}
         />
