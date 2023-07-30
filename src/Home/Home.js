@@ -1,6 +1,6 @@
 import './Home.css';
 import { NavLink } from 'react-router-dom'
-
+import PropTypes from 'prop-types'
 
 const Home = ({randomizePoster, changeFontSize}) => {
   const setupPoster = (e) =>{
@@ -39,3 +39,8 @@ const Home = ({randomizePoster, changeFontSize}) => {
 }
 
 export default Home;
+
+Home.propTypes = {
+  randomizePoster: PropTypes.func.isRequired,
+  changeFontSize: PropTypes.func.isRequired
+};

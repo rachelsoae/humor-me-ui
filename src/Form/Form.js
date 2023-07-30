@@ -1,14 +1,23 @@
 import './Form.css';
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Form = ({setPoster}) => {
+const Form = ({setPoster, setIsFavorite}) => {
 
+  setIsFavorite(false)
+  
   const [formData, setFormData] = useState({
     quote: '',
-    image: '',
     type: '',
+    image: ''
   })
+
+  const defaultFormData = {
+    quote: 'You had one job! Fill out the form! All of it!',
+    type: 'chaotic',
+    image: 'https://images.unsplash.com/photo-1561049501-e1f96bdd98fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=678&q=80'
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -22,7 +31,12 @@ const Form = ({setPoster}) => {
   }
 
   const handleSubmit = () => {
-    setPoster(formData)
+
+    if (!formData.quote || !formData.type || !formData.image) {
+      setPoster(defaultFormData)
+    } else {
+      setPoster(formData)
+    }
   }
 
   return (
@@ -61,7 +75,7 @@ const Form = ({setPoster}) => {
           placeholder='insert image link here'
           name='image'
           onChange={handleChange}
-          value={formData.image}
+          value={formData.src}
         />
         <label htmlFor='img-url'>3. create your quote</label>
         <input 
@@ -72,7 +86,7 @@ const Form = ({setPoster}) => {
           onChange={handleChange}
           value={formData.quote}
         />
-        <Link to={`/poster/${formData.type}`}>
+        <Link to={`/poster/${formData.type || 'chaotic'}`}>
           <div className='buttons'>
             <input 
               type="submit" 
@@ -88,3 +102,7 @@ const Form = ({setPoster}) => {
 }
 
 export default Form;
+
+Form.propTypes = {
+  setPoster: PropTypes.func.isRequired
+}

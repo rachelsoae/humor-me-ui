@@ -1,5 +1,3 @@
-# Humor Me
-## Wholesome and Chotic quote Generator
 
 ## Summary
 Humor Me is a web application that encourages users to laugh and feel light through the generation of random quotes. The user has the option to generate quotes in either a wholesome or chaotic category to best fit their modd in the moment. Additional features include allowing the user to favorite quote posters and create their own. 
