@@ -1,7 +1,7 @@
 describe('Create Page', () => {
 
   const stubRequest = (url, code, fixture) => {
-    return cy.intercept(`https://stretch-api.onrender.com/api/v1${url}`, {
+    return cy.intercept('GET', `https://stretch-api.onrender.com/api/v1${url}`, {
       statusCode: code,
       fixture: fixture
     });
