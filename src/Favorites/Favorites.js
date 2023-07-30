@@ -2,7 +2,7 @@ import './Favorites.css';
 import Card from '../Card/Card.js'
 
 const Favorites = ({favorites}) => {
-  const cards = favorites.map(favorite => <Card key={favorite.id} image={favorite.src} quote={favorite.quote} type={favorite.type} font='1.3em'/>)
+  const cards = favorites.map(favorite => <Card key={favorite.id} image={favorite.image} quote={favorite.quote} type={favorite.type} font='1.3em'/>)
   
   return (
     <main className='fav-page'>
