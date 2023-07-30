@@ -1,16 +1,16 @@
 describe('Create Page', () => {
 
-  const stubRequest = (method, url, code, fixture) => {
-    return cy.intercept(method, `https://stretch-api.onrender.com/api/v1${url}`, {
+  const stubRequest = (url, code, fixture) => {
+    return cy.intercept(`https://stretch-api.onrender.com/api/v1${url}`, {
       statusCode: code,
       fixture: fixture
     });
   }
 
   beforeEach(() => {
-    stubRequest('GET', '/quotes', 200, 'quotes').as('getQuotes')
-    stubRequest('GET', '/images', 200, 'images').as('getImages')
-    stubRequest('GET', '/posters', 200, 'posters').as('getPosters')
+    stubRequest('/quotes', 200, 'quotes').as('getQuotes')
+    stubRequest('/images', 200, 'images').as('getImages')
+    stubRequest('/posters', 200, 'posters').as('getPosters')
     cy.visit('http://localhost:3000/create')
   })
 
