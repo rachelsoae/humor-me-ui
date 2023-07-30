@@ -34,7 +34,9 @@ const App = () => {
 
   const saveFavorite = () => {
     setIsFavorite(true)
+    console.log(poster)
     postFavorite(poster)
+
     .then(response => setFavorites(prevState => [...prevState, response.poster]))
     .catch(error => setError(error.message))
   }
@@ -50,12 +52,12 @@ const App = () => {
 
   const randomizePoster = (type) => {
     const quote = getRandom(filterQuotes(type)).quote
-    const image = getRandom(images).image_src
+    const image = getRandom(images).image
     
     setPoster({
       quote: quote,
       type: type,
-      src: image
+      image: image
     })
 
     setIsFavorite(false)

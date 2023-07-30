@@ -72,7 +72,7 @@ const Form = ({setPoster}) => {
           onChange={handleChange}
           value={formData.quote}
         />
-        <Link to={`/${formData.type}`}>
+        <Link to={`/poster/${formData.type}`}>
           <div className='buttons'>
             <input 
               type="submit" 
