@@ -1,5 +1,6 @@
 import './Poster.css';
 import Card from '../Card/Card'
+import PropTypes from 'prop-types'
 import Home from '../Home/Home'
 import { NavLink } from 'react-router-dom'
 
@@ -24,3 +25,11 @@ const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
 }
 
 export default Poster;
+
+Poster.propTypes = {
+  poster: PropTypes.object.isRequired,
+  font: PropTypes.string.isRequired,
+  saveFavorite: PropTypes.func.isRequired,
+  randomizePoster: PropTypes.func.isRequired,
+  isFavorite: PropTypes.bool.isRequired
+}

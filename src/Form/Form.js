@@ -1,13 +1,14 @@
 import './Form.css';
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Form = ({setPoster}) => {
 
   const [formData, setFormData] = useState({
     quote: '',
-    image: '',
     type: '',
+    image: ''
   })
 
   const handleChange = (event) => {
@@ -61,7 +62,7 @@ const Form = ({setPoster}) => {
           placeholder='insert image link here'
           name='image'
           onChange={handleChange}
-          value={formData.image}
+          value={formData.src}
         />
         <label htmlFor='img-url'>3. create your quote</label>
         <input 
@@ -88,3 +89,7 @@ const Form = ({setPoster}) => {
 }
 
 export default Form;
+
+Form.propTypes = {
+  setPoster: PropTypes.func.isRequired
+}

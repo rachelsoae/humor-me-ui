@@ -1,5 +1,5 @@
 import './Card.css';
-
+import PropTypes from 'prop-types';
 
 const Card = ({image, quote, type, font}) => {
   return (
@@ -25,3 +25,10 @@ const Card = ({image, quote, type, font}) => {
 }
 
 export default Card;
+
+Card.propTypes = {
+  image: PropTypes.string,
+  quote: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  font: PropTypes.string.isRequired
+}

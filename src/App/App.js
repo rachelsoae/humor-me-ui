@@ -36,6 +36,7 @@ const App = () => {
     setIsFavorite(true)
     postFavorite(poster)
     .then(response => setFavorites(prevState => [...prevState, response.poster]))
+    .then(() => setIsFavorite(false))
     .catch(error => setError(error.message))
   }
 
