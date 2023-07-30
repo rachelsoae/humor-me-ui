@@ -6,8 +6,8 @@ const Form = ({setPoster}) => {
 
   const [formData, setFormData] = useState({
     quote: '',
-    image: '',
     type: '',
+    image: ''
   })
 
   const handleChange = (event) => {
@@ -61,7 +61,7 @@ const Form = ({setPoster}) => {
           placeholder='insert image link here'
           name='image'
           onChange={handleChange}
-          value={formData.image}
+          value={formData.src}
         />
         <label htmlFor='img-url'>3. create your quote</label>
         <input 

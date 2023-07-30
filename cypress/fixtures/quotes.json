@@ -1,0 +1,9 @@
+{
+  "quotes": [
+    { "id": 1, "quote": "Don't be afraid to give up the good to go for the great. - John D. Rockefeller", "type": "wholesome" },
+    { "id": 2, "quote": "The only place where success comes before work is in the dictionary. - Vidal Sassoon", "type": "wholesome" },
+    { "id": 3, "quote": "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt", "type": "wholesome" },
+    { "id": 151, "quote": "Why don't some couples go to the gym? Because some relationships don't work out! - Brad Pitt", "type": "chaotic" },
+    { "id": 161, "quote": "Sure, I have plans for the future. It's called surviving the present.", "type": "chaotic" }
+  ]
+}
