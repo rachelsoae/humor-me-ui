@@ -19,7 +19,7 @@ const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
           {isFavorite ? <p className='poster-button saved'>Saved!</p> : <button className='poster-button' onClick={saveFavorite}>💛 save to favorites</button>}
         </div> 
       </>
-      : <NavLink to='/' className='poster-button'>Go Back to Generate Page</NavLink>}
+      : <NavLink to='/' className='poster-button'>🤕 Oops! No poster here! Click to go back the generate page. 🤕</NavLink>}
     </main>
   )
 }
