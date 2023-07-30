@@ -1,6 +1,7 @@
 import './Poster.css';
 import Card from '../Card/Card'
-import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+// import { useState } from 'react'
 
 const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
   return (
@@ -9,8 +10,8 @@ const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
         <Card image={poster.image} quote={poster.quote} type={poster.type} font={font} />
       </div> 
       <div className='poster-buttons'>
-        <button className='poster-button' onClick={() => randomizePoster('wholesome')}>🥹 random wholesome</button>
-        <button className='poster-button' onClick={() => randomizePoster('chaotic')}>😈 random chaotic</button>
+        <NavLink className='poster-button' to="/poster/wholesome" onClick={() => randomizePoster('wholesome')}>🥹 random wholesome</NavLink>
+        <NavLink className='poster-button' to="/poster/chaotic" onClick={() => randomizePoster('chaotic')}>😈 random chaotic</NavLink>
         {isFavorite ? <p className='poster-button saved'>Saved!</p> : <button className='poster-button' onClick={saveFavorite}>💛 save to favorites</button>}
       </div>
     </main>
