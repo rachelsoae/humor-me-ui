@@ -35,11 +35,8 @@ const App = () => {
   const saveFavorite = () => {
     setIsFavorite(true)
     postFavorite(poster)
-    .then(response => {
-      console.log(response)
-      setFavorites(prevState => [...prevState, response.poster])
-    })    
-      .catch(error => setError(error.message))
+    .then(response => setFavorites(prevState => [...prevState, response.poster]))    
+    .catch(error => setError(error.message))
   }
 
   const filterQuotes = (type) => {
