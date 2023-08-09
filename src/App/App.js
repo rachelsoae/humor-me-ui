@@ -73,7 +73,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
         <Route path='/error' element={<Error error={error} setError={setError}/>} />
-        <Route pathe='/loading' element={<Loading />} />
+        <Route path='/loading' element={<Loading />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />}/>
         <Route path='/create' element={<Form setPoster={setPoster} setIsFavorite={setIsFavorite}/>}/>
         <Route 
