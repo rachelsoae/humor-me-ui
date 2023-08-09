@@ -1,10 +1,19 @@
 import './Loading.css'
+import { Navigate } from 'react-router-dom';
 
-const Loading = () => {
+
+const Loading = ({quotes}) => {
+
+  if (quotes.length) {
+    return <Navigate to='/' />
+  }
+
   return (
-    <main className='loading'>
-      <h2 className='loading-message'>🤔  Loading...  🤔</h2>
-    </main>
+    <div className='loading__container'>
+      <div className='loading'>
+        <h2 className='loading__message'>🤔  Loading...  🤔</h2>
+      </div>
+    </div>
   )
 }
 

@@ -69,11 +69,11 @@ const App = () => {
     <div className='app'> 
       <Nav changeFontSize={changeFontSize} />
       {error && <Navigate to='/error' />}
-      {!quotes && <Navigate to='/loading' />}
+      {!quotes.length && !error && <Navigate to='/loading' />}
       <Routes>
         <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
         <Route path='/error' element={<Error error={error} setError={setError}/>} />
-        <Route path='/loading' element={<Loading />} />
+        <Route path='/loading' element={<Loading quotes={quotes} />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />}/>
         <Route path='/create' element={<Form setPoster={setPoster} setIsFavorite={setIsFavorite}/>}/>
         <Route 
@@ -85,7 +85,7 @@ const App = () => {
             randomizePoster={randomizePoster}  
             isFavorite={isFavorite} 
             />}/>
-        {/* <Route path='*' element={<Error error={error} />} /> */}
+        <Route path='*' element={<Error error={error} />} />
       </Routes>
     </div>
   )
