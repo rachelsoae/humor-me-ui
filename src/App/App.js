@@ -6,6 +6,7 @@ import Home from '../Home/Home.js'
 import Nav from '../Nav/Nav.js'
 import Poster from '../Poster/Poster.js'
 import Error from '../Error/Error.js'
+import Loading from '../Loading/Loading.js'
 import {useState, useEffect } from 'react'
 import { getData, postFavorite } from '../apiCalls'
 
@@ -68,9 +69,11 @@ const App = () => {
     <div className='app'> 
       <Nav changeFontSize={changeFontSize} />
       {error && <Navigate to='/error' />}
+      {!quotes && <Navigate to='/loading' />}
       <Routes>
         <Route path='/' element={<Home randomizePoster={randomizePoster} changeFontSize={changeFontSize} />}/>
-        <Route path='/error' element={<Error error={error} />} />
+        <Route path='/error' element={<Error error={error} setError={setError}/>} />
+        <Route pathe='/loading' element={<Loading />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />}/>
         <Route path='/create' element={<Form setPoster={setPoster} setIsFavorite={setIsFavorite}/>}/>
         <Route 
@@ -82,7 +85,7 @@ const App = () => {
             randomizePoster={randomizePoster}  
             isFavorite={isFavorite} 
             />}/>
-        <Route path='*' element={<Error error={error} />} />
+        {/* <Route path='*' element={<Error error={error} />} /> */}
       </Routes>
     </div>
   )
