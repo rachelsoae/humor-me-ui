@@ -67,6 +67,9 @@ const App = () => {
 
   return (
     <div className='app'> 
+      <div className='screen__message'>
+        <h1>Not for mobile</h1>
+      </div>
       <Nav changeFontSize={changeFontSize} />
       {error && <Navigate to='/error' />}
       {!quotes.length && !error && <Navigate to='/loading' />}
