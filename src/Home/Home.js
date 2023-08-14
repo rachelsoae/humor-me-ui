@@ -11,7 +11,7 @@ const Home = ({randomizePoster, changeFontSize}) => {
   return (
     <main className='home-page'>
       <article className='selector' id='wholesome-block'>
-        <h3 className='type-title'>wholesome</h3>
+        <h3 className='type-title'>wholesome quote generator</h3>
         <p className='selector-icon'>🥹</p>
         <NavLink 
           to='/poster/wholesome' 
@@ -23,7 +23,7 @@ const Home = ({randomizePoster, changeFontSize}) => {
         </NavLink>
       </article>
       <article className='selector' id='chaotic-block'>
-        <h3 className='type-title'>less wholesome</h3>
+        <h3 className='type-title'>chaotic quote generator</h3>
         <p className='selector-icon'>😈</p>
         <NavLink 
           to='/poster/chaotic' 

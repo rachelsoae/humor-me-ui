@@ -34,30 +34,3 @@ nav {
   color: #1D0F64;
   font-size: 2em;
 }
-
-@media screen and (max-width: 768px) {
-  nav {
-    height: 10%;
-  }
-  
-  #nav-title{
-    font-size: 1em;
-  }
-
-  .nav-button {
-    margin-right: 0.5em;
-    padding: .5em;
-    border-radius: 1.6em;
-    height: 1.5em;
-    font-size: 0.8em;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 20%;
-  }
-}

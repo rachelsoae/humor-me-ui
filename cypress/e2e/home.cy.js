@@ -17,12 +17,12 @@ describe('Home Page', () => {
   it('Should display two quote generators that take the user to their respective routes', () => {
     cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
       cy.get('.home-page').children().should('have.length', 2)
-        .get('.selector').first().contains('h3', 'wholesome')
+        .get('.selector').first().contains('h3', 'wholesome quote generator')
         .get('.selector').first().contains('p', '🥹')
         .get('#wholesome').should('have.text', 'click here!').click()
         .url().should('eq', 'http://localhost:3000/poster/wholesome')
         .get('.navbar').find('h1').click()
-        .get('.selector').last().contains('h3', 'less wholesome')
+        .get('.selector').last().contains('h3', 'chaotic quote generator')
         .get('.selector').last().contains('p', '😈')
         .get('#chaotic').should('have.text', 'click here!').click()
         .url().should('eq', 'http://localhost:3000/poster/chaotic')
@@ -39,6 +39,30 @@ describe('Home Page', () => {
         .url().should('eq', 'http://localhost:3000/favorites')
         .get('.navbar').find('h1').click()
         .url().should('eq', 'http://localhost:3000/')
+    })
+  })
+})
+
+describe('Home page error handling', () => {
+  it('Should handle 404 errors and navigate the user back to the home page', () => {
+    cy.loadData();
+    cy.visit('http://localhost:3000')
+    cy.wait('@getQuotes').wait('@getImages').wait('@getPosters').then((interception) => {
+      cy.visit('http://localhost:3000/error')
+        .get('.error-message').should('have.text', "🤕  Uh-oh... There's been an error  🤕")
+        .get('#error-home-button').should('have.text', '😄 go home').click()
+        .url().should('eq', 'http://localhost:3000/')
+    })
+  })
+
+  it('Should handle 500 level errors', () => {
+    cy.stubRequest('GET', '/quotes', 500, 'quotes').as('dropQuotes')
+    cy.stubRequest('GET', '/images', 500, 'images').as('dropImages')
+    cy.stubRequest('GET', '/posters', 500, 'posters').as('dropPosters')
+    cy.visit('http://localhost:3000')
+    cy.wait('@dropQuotes').wait('@dropImages').wait('@dropPosters').then((interception) => {
+      cy.get('.error-message').should('have.text', "🤕  Uh-oh... There's been an error  🤕")
+        .get('#error-home-button').should('have.text', '😄 go home')
     })
   })
 })
