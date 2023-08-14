@@ -25,7 +25,7 @@ form{
 
 .form-button{
   padding: 0.5em;
-  width: 40%;
+  width: 20%;
   height: 2.5rem;
   border-radius: 1.2em;
   border: none;
@@ -58,10 +58,4 @@ h2{
 
 .submit {
   margin-top: 1rem;
-}
-
-@media screen and (max-width: 600px) {
-  .form-button {
-    font-size: 0.5rem;
-  }
 }
