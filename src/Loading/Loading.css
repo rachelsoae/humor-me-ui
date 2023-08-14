@@ -11,20 +11,23 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     z-index: 1000;
-    &::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        border: 2px solid #fff;
-        border-radius: 50%;
-        border-top-color: transparent;
-        animation: rotate 1s linear infinite;
-    }
-    @keyframes rotate {
-        to {
-            transform: rotate(360deg);
-        }
+    
+}
+
+.loading::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
     }
 }
