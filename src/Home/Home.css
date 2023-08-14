@@ -9,10 +9,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: 'Inter', sans-serif;
   width: 25%;
   border-radius: 10em;
-  height: 25em
 }
 
 #wholesome-block{

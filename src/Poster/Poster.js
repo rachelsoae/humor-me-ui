@@ -14,9 +14,9 @@ const Poster = ({poster, font, saveFavorite, randomizePoster, isFavorite}) => {
           <Card image={poster.image} quote={poster.quote} type={poster.type} font={font} />
         </div> 
         <div className='poster-buttons'>
-          <NavLink className='poster-button' to="/poster/wholesome" onClick={() => randomizePoster('wholesome')}>🥹 random wholesome</NavLink>
-          <NavLink className='poster-button' to="/poster/chaotic" onClick={() => randomizePoster('chaotic')}>😈 random chaotic</NavLink>
-          {isFavorite ? <p className='poster-button saved'>Saved!</p> : <button className='poster-button' onClick={saveFavorite}>💛 save to favorites</button>}
+          <NavLink className='poster-button' to="/poster/wholesome" onClick={() => randomizePoster('wholesome')}>🥹 wholesome</NavLink>
+          <NavLink className='poster-button' to="/poster/chaotic" onClick={() => randomizePoster('chaotic')}>😈 less wholesome</NavLink>
+          {isFavorite ? <p className='poster-button saved'>Saved!</p> : <button className='poster-button' onClick={saveFavorite}>💛 favorite</button>}
         </div> 
       </>
       : <Error />}

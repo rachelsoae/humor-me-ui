@@ -24,6 +24,7 @@
 
 .poster-button{
   font-size: 1.25em;
+  padding: 0.5em;
   border: none;
   border-radius: 1.5em;
   background: #1D0F64;
@@ -45,3 +46,21 @@
   color: white;
   cursor: default;
 }
+
+@media screen and (max-width: 768px) {
+  .poster {
+    display: flex;
+    flex-direction: column;
+  }
+  .poster-container {
+    width: 65%;
+  }
+  
+  .poster-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+  
