@@ -10,7 +10,7 @@ describe('Create Page', () => {
         .get('#form-page').contains('h2', 'make your own quote!')
         .get('form').contains('label', '1. select your quote type')
         .get('.form-button').first().should('have.text', '🥹 wholesome')
-        .get('.form-button').eq(1).should('have.text', '😈 chaotic')
+        .get('.form-button').eq(1).should('have.text', '😈 less wholesome')
         .get('form').contains('label', '2. add your image url')
         .get('input[type="text"]').first().should('have.attr', 'placeholder', 'insert image link here')
         .get('form').contains('label', '3. create your quote')
