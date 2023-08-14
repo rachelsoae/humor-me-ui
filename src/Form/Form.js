@@ -65,7 +65,7 @@ const Form = ({setPoster, setIsFavorite}) => {
               checked={formData.type === 'chaotic'}
               id="chaotic-radio"
             />
-            😈 chaotic
+            😈 less wholesome
           </label>
         </div>
         <label htmlFor='img-url'>2. add your image url</label>

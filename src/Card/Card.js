@@ -14,7 +14,6 @@ const Card = ({image, quote, type, font}) => {
       >
         <p 
           className='quote'
-          style={{fontSize: `${font}`}}
         >{`${quote}`}</p>
       </div>
       <div className='emojis'>

@@ -9,10 +9,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: 'Inter', sans-serif;
   width: 25%;
+  max-height: 60%;
   border-radius: 10em;
-  height: 25em
 }
 
 #wholesome-block{
@@ -50,4 +51,45 @@
   color: #1D0F64;
   padding: 0.6em;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .selector{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .type-title{
+    font-size: 1.4em;
+  }
+}
+  
+@media screen and (max-width: 670px) {
+
+  .home-page {
+    margin-top: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+
+  .selector {
+    width: 8rem;
+    justify-content: space-around;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .type-title {
+    font-size: 1em;
+  }
+
+  .generate-link {
+    font-size: 1em;
+  }
 }
