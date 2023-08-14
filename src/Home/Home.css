@@ -12,6 +12,7 @@
   justify-content: center;
   font-family: 'Inter', sans-serif;
   width: 25%;
+  max-height: 60%;
   border-radius: 10em;
 }
 

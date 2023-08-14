@@ -59,3 +59,9 @@ h2{
 .submit {
   margin-top: 1rem;
 }
+
+@media screen and (max-width: 600px) {
+  .form-button {
+    font-size: 0.5rem;
+  }
+}
